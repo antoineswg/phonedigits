@@ -1,4 +1,5 @@
 import pyperclip
+import sys
 
 def encrypt(input):
     mapping = {
@@ -13,16 +14,20 @@ def encrypt(input):
         ' ': '0', 'œ': '666 33'
     }
     output = []
-    for index, char in enumerate(input):
-        if char.lower() in mapping:
-            output.append(mapping[char.lower()] + ' ')
-        else:
-            next_char = index + 1
-            if next_char < len(input) and input[next_char].lower() in mapping:
-                output.append(char + ' ')
+    lines = input.split('\n')
+    for line in lines:
+        line_output = []
+        for index, char in enumerate(line):
+            if char.lower() in mapping:
+                line_output.append(mapping[char.lower()] + ' ')
             else:
-                output.append(char)
-    return "".join(output)
+                next_char = index + 1
+                if next_char < len(line) and line[next_char].lower() in mapping:
+                    line_output.append(char + ' ')
+                else:
+                    line_output.append(char)
+        output.append("".join(line_output).rstrip())
+    return "\n".join(output)
 
 
 def decrypt(input):
@@ -38,26 +43,35 @@ def decrypt(input):
         '0': ' '
     }
     output = []
-    tokens = input.strip().split()
-    i = 0
-    while i < len(tokens):
-        token = tokens[i]
-        if token in mapping:
-            output.append(mapping[token])
+    lines = input.split('\n')
+    for line in lines:
+        tokens = line.split()
+        i = 0
+        while i < len(tokens):
+            token = tokens[i]
+            if token in mapping:
+                output.append(mapping[token])
+            else:
+                output.append(token)
             i += 1
-        else:
-            output.append(token)
-            i += 1
+        output.append('\n')
+    if output and output[-1] == '\n':
+        output.pop()
     return "".join(output)
+
+def multiple_lines_support(invite):
+    print("Une fois le texte prêt, retournez à la ligne, puis appuyez sur Ctrl+D (MacOS) ou Ctrl+Z (Windows) et appuyez sur Entrée.")
+    print(invite)
+    return sys.stdin.read().strip()
 
 
 mode = input("Déchiffrer (D) ou Chiffrer (C) ? ").lower()
 if mode == "d":
-    text_input = input("Texte à déchiffrer : ")
+    text_input = multiple_lines_support("Texte à déchiffrer : ")
     result = decrypt(text_input)
     state = "tudo bem"
 elif mode == "c":
-    text_input = input("Texte à chiffrer : ")
+    text_input = multiple_lines_support("Texte à chiffrer : ")
     result = encrypt(text_input)
     state = "tudo bem"
 else:
