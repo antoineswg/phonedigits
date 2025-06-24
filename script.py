@@ -1,3 +1,5 @@
+import pyperclip
+
 def encrypt(input):
     mapping = {
         'a': '2', 'b': '22', 'c': '222',
@@ -18,6 +20,9 @@ def encrypt(input):
         output.append(mapping.get(char.lower(), ''))
     return ' '.join(output)
 
-text_input = input("texte à chiffrer :")
+
+text_input = input("Texte à chiffrer : ")
 result = encrypt(text_input)
-print (result)
+pyperclip.copy(result)
+print ("Résultat : ", result)
+print("Résultat copié dans le presse papier :+1: :aga:")
