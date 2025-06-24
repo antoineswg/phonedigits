@@ -11,13 +11,13 @@ def encrypt(input):
         't': '8', 'u': '88', 'v': '888',
         'w': '9', 'x': '99', 'y': '999', 'z': '9999',
         ' ': '0',
-        '0': '0', '1': '1', '2': '2', '3': '3', '4': '4', '5': '5', '6': '6', '7': '7', '8': '8', '9': '9',
-        '*': '*', '#': '#',
-        '\\': '\\'
     }
     output = []
     for char in input:
-        output.append(mapping.get(char.lower(), ''))
+        if char.lower() in mapping:
+            output.append(mapping[char.lower()])
+        else:
+            output.append(char)
     return ' '.join(output)
 
 
