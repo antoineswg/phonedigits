@@ -1,8 +1,3 @@
-text_input = input("texte à chiffrer :")
-result = encrypt(text_input)
-print (result)
-
-
 def encrypt(input):
     mapping = {
         'a': '2', 'b': '22', 'c': '222',
@@ -22,3 +17,7 @@ def encrypt(input):
     for char in input:
         output.append(mapping.get(char.lower(), ''))
     return ' '.join(output)
+
+text_input = input("texte à chiffrer :")
+result = encrypt(text_input)
+print (result)
