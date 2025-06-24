@@ -102,4 +102,4 @@ Souvent sur twitter on voit revenir ce genre de tweet alors je me suis que c'ét
 
 <img src="./images/t9tweeting.png" alt="Exemple de tweet en T9" width="300px"/>
 
-Je doute que quelqu'un voit ce README un jour mais si c'est le cas hésite pas à Star le repo <img src="./images/aga.png" alt="emote 'aga' de 7tv" width="1rem"/> stp
+Je doute que quelqu'un voit ce README un jour mais si c'est le cas hésite pas à Star le repo <img src="./images/aga.png" alt="emote 'aga' de 7tv" width="16px"/> stp
