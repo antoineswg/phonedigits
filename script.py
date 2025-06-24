@@ -22,11 +22,31 @@ def encrypt(input):
                 output.append(char + ' ')
             else:
                 output.append(char)
-    return ''.join(output)
+    return "".join(output)
 
 
-text_input = input("Texte à chiffrer : ")
-result = encrypt(text_input)
-pyperclip.copy(result)
-print ("Résultat : ", result)
-print("Résultat copié dans le presse papier :+1: :aga:")
+def decrypt(input):
+    
+    return "Faut que j'écrive la fonction là"
+
+
+mode = input("Déchiffrer (D) ou Chiffrer (C) ? ").lower()
+if mode == "d":
+    text_input = input("Texte à déchiffrer : ")
+    result = decrypt(text_input)
+    state = "tudo bem"
+elif mode == "c":
+    text_input = input("Texte à chiffrer : ")
+    result = encrypt(text_input)
+    state = "tudo bem"
+else:
+    error = "Nuh uh, faut choisir D ou C :zaga:"
+    state = "L reader"
+
+
+if state == "tudo bem":
+    pyperclip.copy(result)
+    print ("Résultat : ", result)
+    print("Résultat copié dans le presse papier :+1: :aga:")
+elif state == "L reader":
+    print(error)
