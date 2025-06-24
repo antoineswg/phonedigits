@@ -66,8 +66,9 @@ else:
 
 
 if state == "tudo bem":
-    pyperclip.copy(result)
     print ("Résultat : ", result)
-    print("Résultat copié dans le presse papier :+1: :aga:")
+    if input("Copier le résultat (Y/N) ? ").lower() == "y":
+        pyperclip.copy(result)
+        print("Résultat copié dans le presse papier :+1: :aga:")
 elif state == "L reader":
     print(error)
