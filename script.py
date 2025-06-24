@@ -13,12 +13,16 @@ def encrypt(input):
         ' ': '0', 'œ': '666 33'
     }
     output = []
-    for char in input:
+    for index, char in enumerate(input):
         if char.lower() in mapping:
-            output.append(mapping[char.lower()])
+            output.append(mapping[char.lower()] + ' ')
         else:
-            output.append(char)
-    return ' '.join(output)
+            next_char = index + 1
+            if next_char < len(input) and input[next_char].lower() in mapping:
+                output.append(char + ' ')
+            else:
+                output.append(char)
+    return ''.join(output)
 
 
 text_input = input("Texte à chiffrer : ")
