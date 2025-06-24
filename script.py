@@ -18,3 +18,7 @@ def encrypt(input):
         '*': '*', '#': '#',
         '\\': '\\'
     }
+    output = []
+    for char in input:
+        output.append(mapping.get(char.lower(), ''))
+    return ' '.join(output)
