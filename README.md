@@ -39,7 +39,7 @@ Texte à chiffrer :
 T9Tweeting
 
 Résultat :
-8 9 8 9 33 33 8 444 66 4
+8 09 8 9 33 33 8 444 66 4
 ```
 ```
 Texte à déchiffrer :
@@ -49,7 +49,6 @@ Résultat :
 t9tweeting
 ```
 
-**Déchiffrement :**
 ```
 Texte à chiffrer :
 Grigny-la-Grande-Borne, une bite sur l'épaule
