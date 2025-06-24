@@ -102,6 +102,6 @@ Souvent sur twitter on voit revenir ce genre de tweet alors je me suis que c'ét
 
 ## Capture d'écran
 
-![Exemple de tweet en T9](./images/t9tweeting.png)
+<img src="./images/t9tweeting.png" alt="Exemple de tweet en T9" width="100px"/>
 
-Je doute que quelqu'un voit ce README un jour mais si c'est le cas hésite pas à Star le repo ![emote 'aga' de 7tv](./images/aga.png) stp
+Je doute que quelqu'un voit ce README un jour mais si c'est le cas hésite pas à Star le repo <img src="./images/aga.png" alt="emote 'aga' de 7tv" width="100px"/> stp
